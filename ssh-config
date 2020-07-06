@@ -1,0 +1,75 @@
+Host *
+    ForwardAgent Yes
+    TCPKeepAlive yes
+    ServerAliveInterval 120
+    ServerAliveCountMax 5
+
+Host ynet
+    HostName docker-01.ynet.gov.yk.ca
+
+Host proof-bastion-original bastion-original
+    User ec2-user
+    HostName 52.60.151.209
+
+Host proof-bastion bastion
+    User ec2-user
+    HostName ec2-52-60-151-209.ca-central-1.compute.amazonaws.com
+    # -----BEGIN SSH HOST KEY FINGERPRINTS-----
+    # 256 SHA256:j3CfBstmpiBNiTu86Y6DMcEaXvAyGBC6cvpvpVudK38 no comment (ECDSA)
+    # 256 SHA256:aCvh2i6VIfERodDHk53rDEf5/5E2VbhRP1WoeZOw2FU no comment (ED25519)
+    # 2048 SHA256:8woK97DtiL5/cu87q1bOj6zubiVOQS4EYjhKUVevByM no comment (RSA)
+    # -----END SSH HOST KEY FINGERPRINTS-----
+
+Host amanda
+    User ec2-user
+    HostName ec2-35-183-30-38.ca-central-1.compute.amazonaws.com
+    # SHA256:Xkm994DEnlqvoOZj6HGQEwqhKlkAU3KDXxPj3qhbGVo
+
+Host barbara
+    User ec2-user
+    HostName ec2-35-183-123-38.ca-central-1.compute.amazonaws.com
+    # SHA256:lEmenvM2iQENOFwZotyFfdn450ioWjVvmisAaDkFieo
+
+Host proof-edge edge
+    User ec2-user
+    HostName edge.proofgov.com
+    #SHA256:vjTEggWoOnc+S58z6CNxb7xCuAZzQZoRAdD4vwzzEX4 no comment (ECDSA)
+    #SHA256:9YpKroRAQ3sz++d2hM/caJdXow0Ld4HXODcyGDpveTE no comment (ED25519)
+    #SHA256:/wHyzwOXJGHXIE1/eikFaMl4iMBwrJPNpDR8xYJPGBs no comment (RSA)
+
+Host aishihik proof-aishihik app.proofgov.com
+    User ec2-user
+    HostName app.proofgov.com
+    ##############################################################
+    #-----BEGIN SSH HOST KEY FINGERPRINTS-----
+    #256 SHA256:HJ/JgTj5+a1XlhReUCyxFc/T43EqLnWTxbxoeiRf9/E no comment (ECDSA)
+    #256 SHA256:v6rwaZUogjh4qo3Bj0VmxqN3xCnwStq9CfuO9/x/6os no comment (ED25519)
+    #2048 SHA256:bgQijLaAXR923+YKJsQAyz2X8ZgMsJq7YAwSoNhAm/Q no comment (RSA)
+    #-----END SSH HOST KEY FINGERPRINTS-----
+    ###########
+
+Host build proof-build build.proofgov.com
+    HostName app.proofgov.com
+    User build
+    #ForwardAgent Yes
+    ##############################################################
+    #-----BEGIN SSH HOST KEY FINGERPRINTS-----
+    #256 SHA256:HJ/JgTj5+a1XlhReUCyxFc/T43EqLnWTxbxoeiRf9/E no comment (ECDSA)
+    #256 SHA256:v6rwaZUogjh4qo3Bj0VmxqN3xCnwStq9CfuO9/x/6os no comment (ED25519)
+    #2048 SHA256:bgQijLaAXR923+YKJsQAyz2X8ZgMsJq7YAwSoNhAm/Q no comment (RSA)
+    #-----END SSH HOST KEY FINGERPRINTS-----
+    ###########
+
+Host beaver proof-beaver
+    HostName yg-form-bridge.proofgov.com
+    User ec2-user
+    #SHA256:lsywBREW1pkh8jKoqEN92q0IAQMz8BPCLjaSPsFrmD4
+    #SHA256:MuHONolqajV1fCDa4oNRYZjdpcwND/FKrGxgd3FdGsY
+    #SHA256:mtaeNXKvm3TdgD/CSzeuQ9kfRp6csks29uWzsDgYE6c
+
+Host babbage proof-babbage
+    HostName 35.183.142.44
+    User ec2-user
+    # SHA256:ruzDW+j/x3DNueh+msVZ1DM4yWT6H2ZpZQLnsbEQWk8 no comment (ECDSA)
+    # SHA256:C91jm7XBWv66T5jFsOSBcfrmrUHpziFj357kTauz5CM no comment (ED25519)
+    # SHA256:v84nw1txpN3u0U5ntff2sHaKLy6OF9F9eHjh9zKulfg no comment (RSA)"
